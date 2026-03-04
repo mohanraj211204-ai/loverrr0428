@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheree Ma</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.container{
+width:330px;
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{
+color:#ff3d6e;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:30px;
+background:#ff3d6e;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-bottom:15px;
+}
+
+.message{
+display:none;
+background:#fff0f5;
+padding:15px;
+margin-top:10px;
+border-radius:10px;
+font-size:15px;
+color:#444;
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sheree Ma ❤️</h1>
+
+<button onclick="showMessages()">Open Love Messages</button>
+
+<div id="msg1" class="message">
+Sheree Ma ❤️ <br><br>
+Na unna pathu love panni konjam time than aachu… aana antha konjam time la than nee enaku romba mukkiyam nu purinjiduchu. Nee kovama pesinalum parava illa, aana nee en life la irukanum nu dhan naa aasai paduren. Un smile paatha na romba happy aaguren. Enaku nee romba special Sherin. 💖
+</div>
+
+<div id="msg2" class="message">
+ <br><br>
+Unna paatha odane en day full happy aaidum. Nee siricha pothum enaku ellam sari aagidum. Un kooda pesina konjam neram kooda enaku romba special. Always smile Sherin.
+</div>
+
+<div id="msg3" class="message">
+<br><br>
+Nee en life la vandhadhuku apram dhan enaku real happiness enna nu purinjiduchu. Un kooda pesura ovvoru nimishamum enaku romba special. Nee siricha pothum enaku world full bright aaidum. Always happy aa iru Sheree ma. 🤗💕
+<BR></BR>I LOVE YOU SOO MUCH DII 
+</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c3bdf4d0a.mp3?filename=romantic-love-112191.mp3">
+</audio>
+
+</div>
+
+<script>
+
+function showMessages(){
+
+document.getElementById("msg1").style.display="block";
+
+setTimeout(()=>{
+document.getElementById("msg2").style.display="block";
+},2000);
+
+setTimeout(()=>{
+document.getElementById("msg3").style.display="block";
+},4000);
+
+document.getElementById("music").play();
+
+}
+
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
